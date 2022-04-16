@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: ./
+    ports:
+      - '3000:8080'
+    container_name: koffee-luv
+    volumes:
+      - .:/code
+  infrastructure:
+    build:
+      context: ./
+    container_name: infra
+    volumes:
+      - .:/code
